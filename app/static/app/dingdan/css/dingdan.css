@@ -1,0 +1,175 @@
+*{
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+img{
+    display: block;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #F5F5F5;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+header .title{
+    width: 100%;
+    height: 0.8rem;
+    background-color: #FCFCFC;
+}
+header .title ul li{
+    display: block;
+    height: 0.8rem;
+    width: 1.5rem;
+    box-sizing: border-box;
+    line-height: 0.8rem;
+    text-align: center;
+    font-size: 0.28rem;
+    float: left;
+}
+header .title ul .active{
+    border-bottom: 0.04rem solid #ff5000;
+    color: #ff5000;
+}
+main{
+    width: 100%;
+    height: auto;
+    margin: 0.24rem 0;
+}
+main .search{
+    width: 7.02rem;
+    height: 0.52rem;
+    margin:0 0.24rem 0.24rem 0.24rem;
+}
+main .search .search_con{
+    width: 5.28rem;
+    height: 0.52rem;
+    border-radius: 0.15rem;
+    position: relative;
+    overflow: hidden;
+    background-color: #FCFCFC;
+    font-size: 0.32rem;
+    float: left;
+}
+main .search .search_con input{
+    width:4.48rem;
+    height: 0.32rem;
+    padding:0.1rem 0.2rem 0.1rem 0.6rem;
+    font-size: 0.28rem;
+    border: none;
+    outline: none;
+}
+main .search .search_con .jing{
+    width: 0.32rem;
+    height: 0.36rem;
+    padding: 0.1rem 0 0.1rem 0.2rem;
+    position: absolute;
+    bottom: -0.04rem;
+    right:4.76rem;
+    color: #b2b2b2;
+    font-size: 0.32rem;
+}
+main .search .search_font{
+    width: 1.5rem;
+    height: 0.52rem;
+    margin-left: 0.24rem;
+    background: #FF5000;
+    color:#fff;
+    font-size: 0.28rem;
+    font-weight: 600;
+    border-radius: 0.3rem;
+    text-align: center;
+    line-height: 0.52rem;
+    float:left;
+}
+main .list-card{
+    width:100%;
+    height: auto;
+}
+main .list-card li{
+    display: block;
+    width: 7.02rem;
+    height: 4.56rem;
+    margin:0 0.24rem 0.24rem 0.24rem;
+    background-color: #FCFCFC;
+    border-radius: 0.24rem;
+}
+main .list-card li .head{
+    width: 100%;
+    height: 0.94rem;
+    font-size: 0.32rem;
+}
+main .list-card li .head .left{
+    width:2.5rem;
+    height: 0.94rem;
+    overflow: hidden;
+}
+main .list-card li .head .left .logo{
+    width: 0.3rem;
+    height: 0.3rem;
+    margin:0.32rem 0 0.32rem 0.24rem;
+    background-color: #FF5000;
+    float: left;
+}
+main .list-card li .head .left span{
+    width: 1.7rem;
+    height: 0.28rem;
+    font-size: 0.24rem;
+    margin-top:0.32rem;
+    margin-left: 0.1rem;
+    float: left;
+}
+main .list-card li .con{
+    width: 7.02rem;
+    height: 1.8rem;
+    margin-bottom: 0.24rem;
+}
+main .list-card li .con .photo{
+    width:1.8rem;
+    height: 1.8rem;
+    float: left;
+    margin-left: 0.24rem;
+    border-radius: 0.1rem;
+}
+main .list-card li .con .photo img{
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+main .list-card li .con .talk{
+    width:4.5rem;
+    height: 1.58rem;
+    float: right;
+    margin-right: 0.24rem;
+}
+main .list-card li .con .talk p{
+     font-size: 0.24rem;
+}
+main .list-card li .con .talk p .fontstyle{
+    color: #ff5b54;
+}
+main .list-card li .con .talk p .fontstyle1{
+    color:#ccc;
+
+}
+footer{
+    width:6.7rem;
+    height:0.78rem;
+    padding: 0.04rem 0.4rem 0 0.4rem;
+    background-color: #ffffff;
+    border-top: 0.02rem solid #e7e7e7;
+    border-bottom: 0.02rem solid #f8f8f8;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    /*box-sizing: border-box;*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    font-size: 0.32rem;
+}
+footer a{
+    line-height: 0.78rem;
+    color:#7F7F7F;
+}

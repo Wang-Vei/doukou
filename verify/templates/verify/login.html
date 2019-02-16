@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_966617_afyr9gls6am.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'verify/css/login.css' %}">
+    <script src="{% static 'verify/js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'verify/js/rem.js' %}"></script>
+</head>
+<body>
+    <div class="login">
+        <div class="wel">
+            <a href="">
+                <img src="{% static 'verify/image/login/man.png' %}" alt="">
+            </a>
+            <p>欢迎亲爱的小主</p>
+        </div>
+        <div class="denglu">
+            <form action="{% url 'verify:login' %}" method="post">
+                {% csrf_token %}
+                <li class="username">
+                    <img src="{% static 'verify/image/login/my.png' %}" alt="" class="my">
+                    {{ form.tel }}
+                    <!--<input type="text" name="tel" placeholder="请输入用户名" class="input" id="tel" maxlength="13">-->
+                    <img src="{% static 'verify/image/login/+.png' %}" alt="" class="clear">
+                    <img src="{% static 'verify/image/login/wrong.png' %}" alt="" class="wrong">
+                    <img src="{% static 'verify/image/login/right.png' %}" alt="" class="right">
+                    <div class="tips">
+                        <div>
+                           <img src="{% static 'verify/image/login/spot.png' %}" alt="">
+                            <p style="margin-right: 0.1rem">手机号格式不对哟!</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="password">
+                    <img src="{% static 'verify/image/login/suo.png' %}" alt="" class="ps">
+                    {{ form.password }}
+                    <!--<input type="password" placeholder="请输入密码" class="input" maxlength="16" id="mima">-->
+                    <img src="{% static 'verify/image/login/wrong.png' %}" alt="" class="wrong1">
+                    <img src="{% static 'verify/image/login/right.png' %}" alt="" class="right1">
+                    <p>
+                        <img src="{% static 'verify/image/login/fengge.png' %}" alt="">
+                        <a href="">忘记密码</a>
+                        <img src="{% static 'verify/image/login/left.png' %}" alt="">
+                    </p>
+                    <div class="tips1">
+                        <div>
+                           <img src="{% static 'verify/image/login/spot.png' %}" alt="">
+                            <span style="margin-right: 0.1rem">您的密码填写有误，请重试</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="dlbtn">
+                    <div class="button">
+                        <button class="btn">登录</button>
+                    </div>
+                    <div class="spot">
+                        <div class="p">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </li>
+            </form>
+            <div class="zcbtn">
+                <a href="{% url 'verify:register' %}" class="zc">注册</a>
+            </div>
+        </div>
+        <div class="third_party">
+            <h4>
+                <img src="{% static 'verify/image/login/line.png' %}" alt="">
+                <span>第三方登录</span>
+                <img src="{% static 'verify/image/login/line.png' %}" alt="">
+            </h4>
+            <ul>
+                <li><img src="{% static 'verify/image/login/QQ.png' %}" alt=""></li>
+                <li><img src="{% static 'verify/image/login/weibo.png' %}" alt=""></li>
+                <li><img src="{% static 'verify/image/login/wechat.png' %}" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var oldtel = $("#id_tel").val();
+     $("#id_tel").bind('input',function () {
+            $("#id_tel").val(fomatterTel($("#id_tel").val(), oldtel));
+            oldtel = $("#id_tel").val();
+     });
+    function fomatterTel(val, old) {
+            var str = "";
+            var telLen = val.length;
+            if (old.length <= telLen) {
+                if (telLen === 4 || telLen === 9) {
+                    var pre = val.substring(0, telLen-1);
+                    var last = val.substr(telLen-1, 1);
+                    str = pre + ' ' + last;
+                } else {
+                    str = val;
+                }
+            } else {
+                if (telLen === 9 || telLen === 4) {
+                    str = val.trim();
+                } else {
+                    str = val;
+                }
+            }
+            return str;
+    }
+    $("#id_password").focus(function () {
+        var pattern = /(13\d|14[579]|15[^4\D]|17[^49\D]|18\d)\d{8}/g,
+	    str = $('#id_tel').val()
+        let newstr=''
+        for (var i=0;i<str.length;i++){
+            if(str[i]!=' '){
+                newstr+=str[i]
+            }
+        }
+        let boo=pattern.test(newstr);
+        if(boo){
+            $('.wrong').hide();
+            $('.clear').hide();
+            $('.tips').hide();
+            $('.right').show();
+        }
+        else{
+            if ($('#id_tel').val().length==0){
+                $('.tips div p').text('手机号不可为空!')
+            }else {
+                $('.tips div p').text('手机号格式不对哟!')
+            }
+            $('.wrong').show();
+            $('.clear').hide();
+            $('.tips').show();
+            $('.right').hide();
+        }
+        $('.password p').hide()
+    })
+    $("#mima").blur(function () {
+        if ($(this).val()=='123456'){
+           $('.right1').show();
+           $('.tips1').hide();
+        }else {
+            $('.wrong1').show();
+            $('.tips1').show();
+        }
+    })
+    $("#id_tel").bind('input',function(){
+        if ($(this).val().length>1){
+            $('.tips').hide()
+            $('.clear').show();
+            $('.wrong').hide();
+            $('.right').hide();
+        }else{
+            $('.clear').hide();
+        }
+    })
+    $('.clear').click(function () {
+        $('#id_tel').val('')
+    })
+    $(".btn").click(function () {
+        let Posttel = ''
+        oldtel = $("#id_tel").val();
+        for (var i = 0; i< oldtel.length; i++){
+            if (oldtel[i] != ' '){
+               Posttel+=oldtel[i]
+            }
+        }
+        $("#id_tel").val(Posttel)
+        if (($("#id_tel").val() !== '') && ($("#id_password").val() !== '')){
+            $('.dlbtn .button span').hide()
+            $('.spot').show()
+            $('.dlbtn .button').css({
+                background: '-webkit-linear-gradient(left,#fc6a76,#ff6f43)'
+            })
+        }
+    })
+</script>

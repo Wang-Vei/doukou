@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <script src="{% static 'app/goods/js/rem.js' %}"></script>
+    <script src="{% static 'app/goods/js/jquery-3.2.1.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'app/goods/css/index.css' %} ">
+</head>
+<body>
+    <div id="head">
+        <div class="n1"><a href="{% url 'app:index' %}"><img src="{% static 'app/goods/img/n1.png' %} " alt=""></a></div>
+        <div class="k1"> 
+            <input type="text" class="input" placeholder="GUCCI" >
+            <div class="mirror"><img src="{% static 'app/goods/img/mirror.png' %}" alt=""></div>
+        </div>
+        
+        
+        <div class="logo"><img src="{% static 'app/goods/img/n7.png' %}" alt=""></div>
+    </div>
+    <div id="head2">
+            <div class="n2"><img src="{% static 'app/goods/img/n1.png' %}" alt=""></div>
+            <div class="n3"><img id="img" src="{% static 'app/goods/img/shaixuan@2x.png' %}" alt=""></div>
+    </div>
+    <div class="word">
+        <div class="n1">
+            <p id='p1'> CHANEL 香奈儿 </p>
+            <p id='p2'> EDU  法国  56.8万粉丝 </p>
+        </div>
+        <div class="n2">
+            <p id="p3">香奈儿 (Chanel)是一个法国奢侈品品牌，创始人是Coco</p>
+            <p id="p3">CHANEL(原名Gabrielle Bonheur Chanel)</p>
+        </div>
+        <div class="n3">
+            <div class="n3_img">
+                <img src="{% static 'app/goods/img/line.png' %}" alt="" >
+            </div>
+        </div>
+    </div>
+    
+    <div class="cate">
+        <div class="cate1" id="s1">首页
+            
+        </div>
+        <div class="cate1" id="s2">商品
+
+        </div>
+        <div class="cate1">上新</div>
+    </div>
+    <div class="main1">
+        <div class="main">
+            {% for item in goods %}
+            <div class="m1">
+                <a href="{% url 'app:detail' item.id %}">
+                <div class="img"><img src="/media/{{ item.img }}" alt=""></a></div>
+                <p>{{ item.name }}</p>
+                <span class="z1">
+                    <img src="{% static 'app/goods/img/qiandai@2x.png' %}" alt=""  style="display: block;height: 80px;width: 80px;">
+                    <p>{{ item.price }}</p>
+
+                </span>
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+    <div class="main2">
+        <div class="m2">
+            <div style="background: pink">综合</div>
+            <div>销量</div>
+            <div>价格</div>
+            <div>新品</div>
+            <div>筛选</div>
+        </div>
+        <div class="main">
+            {% for item in goods %}
+            <div class="m1">
+                <div class="img"><img src="/media/{{ item.img }}" alt=""></div>
+                <p>{{ item.name }}</p>
+                <span class="z1">
+                    <img src="{% static 'app/goods/img/qiandai@2x.png' %}" alt=""  style="display: block;height: 80px;width: 80px;">
+                    <p>{{ item.price }}</p>
+                </span>
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+        <div class="main3">
+            {% for item in goods %}
+
+            <div class="l1">
+                <div class="q1">
+                    <img src="/media/{{ item.img }}" alt="">
+                </div>
+                <div class="q2">
+                    <img src="{% static 'app/goods/img/line2.png' %}" alt="">
+                </div>
+                <div class="q3">
+                    <p>{{ item.name }}</p>
+                    <!--<p>{{ item.explanation }} </p>-->
+                    <div class="p2">
+                        <span>自营</span>
+                        <span>税费补贴</span>
+                        <span>95%好评</span>
+                    </div>
+                    <div class="q4">
+                        <img src="{% static 'app/goods/img/money.png' %}" alt="">
+                        <p>{{ item.price }}</p>
+                    </div>
+
+                </div>
+                <div class="circle2">
+                    <img src="{% static 'app/goods/img/circle2.png' %}" alt="">
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+<script>
+    $("#s1").on("click",function(){
+        $("#s1").css(
+            {"background":'pink',
+            "color":"#fff"
+        })
+        $("#s2").css(
+            {"background":'none',
+            "color":"#B9B9B9"
+        })
+        $(".main1").css("display",'block')
+        $(".main2").css("display",'none')
+
+    })
+    $("#s2").on("click",function(){
+        $("#s1").css(
+            {"background":'none',
+            "color":"#B9B9B9"
+        })
+        $("#s2").css(
+            {"background":'pink',
+            "color":"#fff"
+        })
+        $(".main1").css("display",'none')
+        $(".main2").css("display",'block')
+    })
+    $(window).scroll(function(){
+        
+        var w_h = $(document).scrollTop();
+        if(w_h>$(".cate")[0].offsetTop){
+            $("#head2").css("display",'block')
+            $("#head").css("display",'none')
+            $(".word").css("display",'none')
+            $(".cate").css("display",'none')
+        }
+        else{
+            $("#head2").css("display",'none')
+            $("#head").css("display",'block')
+            $(".word").css("display",'block')
+            $(".cate").css("display",'block')
+        }
+    })
+    var flag=0
+    $(".n3").click(function(){
+        if(flag==0){
+            $("#img").attr("src",'{% static "app/goods/img/fenlei@2x.png" %}')
+            $(".main3").css('display','block')
+            $(".main").css('display','none')
+            flag=1
+        }else{
+            $("#img").attr("src",'{% static "app/goods/img/shaixuan@2x.png" %}')
+            $(".main3").css('display','none')
+            $(".main").css('display','flex')
+            flag=0
+        }
+        
+        
+    }) 
+    
+    
+    
+        
+    
+        
+   
+</script>

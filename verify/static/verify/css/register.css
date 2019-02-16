@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: PingFang SC, Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+input::-webkit-input-placeholder {
+    /* placeholder颜色  */
+    color: #fbf0ee;
+    /* placeholder字体大小  */
+    font-size: 0.23rem;
+     /* placeholder位置  */
+    /*text-align: right;*/
+}

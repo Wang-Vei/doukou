@@ -1,0 +1,426 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: PingFang SC, Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+input::-webkit-input-placeholder {
+    /* placeholder颜色  */
+    color: #fbf0ee;
+    /* placeholder字体大小  */
+    font-size: 0.23rem;
+     /* placeholder位置  */
+    /*text-align: right;*/
+}
+.login{
+    width: 100%;
+    height: 12.44rem;
+    background-image: url("../image/login/bg.png");
+    padding-top: 0.9rem;
+}
+.login .wel{
+    width: 7.05rem;
+    height: 2.25rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.login .wel a{
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.login .wel a img{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.login .wel p{
+    font-size: 0.3rem;
+    color: #fff;
+    letter-spacing: 0.01rem;   /*设置字间距*/
+}
+.login .denglu{
+    width: 7.05rem;
+    height: auto;
+    margin: 0.75rem auto 0;
+}
+.login .denglu form{
+    width: 100%;
+    /*height: 100%;*/
+    height: auto;
+}
+.login .denglu form .username{
+    width: 100%;
+    height: 1rem;
+    font-size: 0.2rem;
+    position: relative;
+}
+.login .denglu form .username::after{
+    content: "";
+    width: 6.5rem;
+    height: 0.02rem;
+    background: rgba(255,255,255,.5);
+    position: absolute;
+    left: 0.25rem;
+    bottom: 0;
+}
+.login .denglu form .username .my{
+    width: 0.4rem;
+    height: 0.36rem;
+    display: block;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.3rem;
+    z-index: 88;
+}
+.login .denglu form .username .clear{
+    display: none;
+    width: 0.19rem;
+    height: 0.22rem;
+    position: absolute;
+    right: 0.3rem;
+    top: 0.45rem;
+    z-index: 100;
+}
+.login .denglu form .username .wrong{
+    display: none;
+    width: 0.64rem;
+    height: 0.64rem;
+    position: absolute;
+    right: 0.15rem;
+    top: 0.2rem;
+    z-index: 50;
+}
+.login .denglu form .username .right{
+    display: none;
+    width: 0.64rem;
+    height: 0.64rem;
+    position: absolute;
+    right: 0.15rem;
+    top: 0.2rem;
+    z-index: 50;
+}
+.login .denglu form .username .tips{
+    width: 2.2rem;
+    height: 0.35rem;
+    background: #fff;
+    border-radius: 0.05rem;
+    position: absolute;
+    right: 0.4rem;
+    top: -0.2rem;
+    display: none;
+}
+.login .denglu form .username .tips div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.login .denglu form .username .tips img{
+    width: 0.09rem;
+    height: 0.09rem;
+}
+.login .denglu form .username .input{
+    width: 5.4rem;
+    height: 0.6rem;
+    font-size: 0.26rem;
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    background: rgba(0,0,0,0);
+    border: 0;
+    outline: 0;
+    padding-left: 1.1rem;
+    color: #fff;
+}
+.login .denglu form .username span{
+    position: absolute;
+    left: 1.1rem;
+    top: 0.2rem;
+}
+.login .denglu form .password{
+    width: 100%;
+    height: 1rem;
+    font-size: 0.2rem;
+    position: relative;
+}
+.login .denglu form .password::after{
+    content: "";
+    width: 6.5rem;
+    height: 0.02rem;
+    background: rgba(255,255,255,.5);
+    position: absolute;
+    left: 0.25rem;
+    bottom: 0;
+}
+.login .denglu form .password .ps{
+    width: 0.34rem;
+    height: 0.4rem;
+    display: block;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.3rem;
+    z-index: 88;
+}
+.login .denglu form .password .wrong1{
+    display: none;
+    width: 0.64rem;
+    height: 0.64rem;
+    position: absolute;
+    right: 0.15rem;
+    top: 0.2rem;
+    z-index: 50;
+}
+.login .denglu form .password .right1{
+    display: none;
+    width: 0.64rem;
+    height: 0.64rem;
+    position: absolute;
+    right: 0.15rem;
+    top: 0.2rem;
+    z-index: 50;
+}
+.login .denglu form .password .tips1{
+    width: 3.2rem;
+    height: 0.35rem;
+    background: #fff;
+    border-radius: 0.05rem;
+    position: absolute;
+    right: 0.4rem;
+    bottom: -0.55rem;
+    display: none;
+}
+.login .denglu form .password .tips1 div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.2rem;
+}
+.login .denglu form .password .tips1 img{
+    width: 0.09rem;
+    height: 0.09rem;
+}
+.login .denglu form .password input{
+    width: 5.4rem;
+    height: 0.6rem;
+    font-size: 0.26rem;
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    background: rgba(0,0,0,0);
+    border: 0;
+    outline: 0;
+    padding-left: 1.1rem;
+    color: #fff;
+}
+.login .denglu form .password p{
+    width: 2rem;
+    height: .4rem;
+    position: absolute;
+    right: 0.15rem;
+    top: 0.32rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.login .denglu form .password p img:first-child{
+    display: inline;
+    width: 0.02rem;
+    height: 0.24rem;
+}
+.login .denglu form .password p a{
+    font-size: 0.23rem;
+    display: block;
+    color: #fff;
+}
+.login .denglu form .password p img:nth-of-type(2){
+    width: 0.17rem;
+    height: 0.25rem;
+}
+.login .denglu form .dlbtn{
+    width: 100%;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    margin-top: 1.2rem;
+    position: relative;
+}
+.login .denglu form .dlbtn .button{
+    display: block;
+    width: 6.55rem;
+    height: 0.7rem;
+    border-radius: 0.35rem;
+    background: #fb6985;
+    border: 0;
+    margin-left: 0.25rem;
+    font-size: 0.35rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.7rem;
+}
+.login .denglu form .dlbtn .button .btn{
+    border: 0;
+    background: #fb6985;
+    font-size: 0.35rem;
+    color: #fff;
+}
+/*.login .denglu form .dlbtn .button span{*/
+    /*display: none;*/
+/*}*/
+@keyframes chang-spot1{
+    0%{
+        opacity: 0.9;
+    }
+    30%{
+        opacity: 0.6;
+    }
+    60%{
+        opacity: 0.3;
+    }
+    100%{
+        opacity: 0.1;
+    }
+}
+@keyframes chang-spot2{
+    0%{
+        opacity: 0.6;
+    }
+    30%{
+        opacity: 0.3;
+    }
+    60%{
+        opacity: 0.1;
+    }
+    100%{
+        opacity: 0.9;
+    }
+}
+@keyframes chang-spot3{
+    0%{
+        opacity: 0.3;
+    }
+    30%{
+        opacity: 0.1;
+    }
+    60%{
+        opacity: 0.9;
+    }
+    100%{
+        opacity: 0.6;
+    }
+}
+.login .denglu form .dlbtn .spot{
+    display: none;
+    width: 1rem;
+    height: 0.3rem;
+    position: absolute;
+    left: 3rem;
+    top: 0.35rem;
+}
+.login .denglu form .dlbtn .spot .p{
+    margin-top: 0.1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.login .denglu form .dlbtn .spot .p div:first-child{
+    width: 0.12rem;
+    height: 0.12rem;
+    background: #fff;
+    border-radius: 50%;
+    animation: chang-spot1 1.2s linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+.login .denglu form .dlbtn .spot .p div:nth-child(2){
+    width: 0.12rem;
+    height: 0.12rem;
+    background: #fff;
+    border-radius: 50%;
+    animation: chang-spot2 1.5s linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+.login .denglu form .dlbtn .spot .p div:last-child{
+    width: 0.12rem;
+    height: 0.12rem;
+    background: #fff;
+    border-radius: 50%;
+    animation: chang-spot3 1.6s linear;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+.login .denglu .zcbtn{
+    width: 100%;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    margin-top: 0.1rem;
+}
+.login .denglu .zcbtn .zc{
+    display: block;
+    width: 6.55rem;
+    height: 0.7rem;
+    border-radius: 0.35rem;
+    background: #f690a0;
+    border: 0;
+    margin-left: 0.25rem;
+    font-size: 0.35rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.7rem;
+}
+.login .third_party{
+    width: 7.05rem;
+    /*height: 1.65rem;*/
+    height: auto;
+    margin: 1.8rem auto 0;
+}
+.login .third_party h4{
+    width: 6.55rem;
+    margin: 0 auto;
+    font-size: 0.25rem;
+    color: #fff;
+    font-weight: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login .third_party h4 img{
+    width: 2.55rem;
+    height: 0.02rem;
+}
+.login .third_party ul{
+    width: 6.25rem;
+    margin: 0.3rem auto 0;
+    padding: 0 0.15rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login .third_party li:first-child img{
+    width: 0.78rem;
+    height: 0.78rem;
+}
+.login .third_party li:nth-child(2) img{
+    width: 0.78rem;
+    height: 0.78rem;
+}
+.login .third_party li:last-child img{
+    width: 0.78rem;
+    height: 0.78rem;
+}

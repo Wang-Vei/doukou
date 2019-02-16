@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <script src="{% static 'app/detail/js/rem.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'app/detail/css/detail.css' %}">
+</head>
+<body>
+    <div class="zhengti">
+        {% csrf_token %}
+        <header>
+            <div class="header">
+                <div class="fanhui">
+                    <a href="{% url 'app:goods' 1 %}"><img src="{% static 'app/detail/img/fanhui.png'%}" alt="" ></a>
+
+                </div>
+                <div class="zhongxin">
+                    商品详情
+                </div>
+                <div class="fenxiang">
+                    <img src="{% static 'app/detail/img/分享.png'%}"  alt="" >
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="tupian">
+                <div class="shangpin">
+                    <img src="/media/{{ goods.img }}" class="tupian1"  alt="">
+                </div>
+                <div class="btns">
+                    <img src="{% static 'app/detail/img/lunbo.png'%}"  alt="">
+                </div>
+                <div class="price">
+                    ￥ <span>{{goods.price}}</span>
+                </div>
+            </div>
+            <div class="detail">
+                <p>
+                    {{goods.explanation | striptags | slice:'47'}}...
+                </p>
+            </div>
+        </main>
+        <section>
+            <div class="xinghao">
+                <div class="wenzi">
+                    包包型号：RDY7340
+                </div>
+                <div class="right">
+                    <img src="{% static 'app/detail/img/切换器左.png'%}" alt="">
+                </div>
+            </div>
+            <div class="waiter">
+                <div class="left">
+                    <img src="{% static 'app/detail/img/全球.png'%}" alt="">
+                    亲选全球
+                    <img src="{% static 'app/detail/img/正.png'%}" alt="">
+                    正品保证
+                    <img src="{% static 'app/detail/img/飞机1.png'%}" alt="">
+                    急速发货
+                    <img src="{% static 'app/detail/img/7.png'%}" alt="">
+                    无忧退货
+                </div>
+                 <div class="right">
+                    <img src="{% static 'app/detail/img/切换器左.png'%}" alt="">
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="one">
+                上拉查看图文详情
+            </div>
+            <div class="two">
+                <div class="left right">图文详情</div>
+                <div class="right">商品参数</div>
+            </div>
+            <div class="three">
+                <div class="section2">
+                    <p>【商品名称】 {{goods.name}}</p>
+                </div>
+                <div class="section2">
+                    <!--<div class="left1">-->
+                        <!--【商品说明】-->
+                    <!--</div>-->
+                    <!--<div class="right1">{{goods.explanation}}-->
+                    <!--</div>-->
+                    <p>【商品说明】 {{goods.explanation | striptags | slice:'18'}}...</p>
+                </div>
+                <div class="section2">
+                    <p>【商品分类】 {{ goods.c}}</p>
+                </div>
+                <div class="section2">
+                     <p>【商品品牌】 {{goods.b}}</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="shadow" style="display: none;width: 100%;height: 100%;position: fixed;top: 0;
+    left:0;"></div>
+    <div class="jiaohu">
+        <div class="son ">
+            <a href="" class="kefu"><img src="{% static 'app/detail/img/客服.png'%}" alt=""></a>
+        </div>
+        <div class="son son0">
+            <a href="" class="kefu"><img src="{% static 'app/detail/img/购物车.png'%}" alt=""></a>
+        </div>
+        <div class="son son1 shopping">加入购物车</div>
+        <div class="gouwuche">
+            <div class="neirong">
+                <div class="top">
+                    <div class="zhaopian">
+                        <img src="/media/{{ goods.img }}" alt="">
+                    </div>
+                    <div class="jieshao">
+                        <p style="margin: 0.1rem 0 0.2rem;font-size: 0.5rem;font-weight: bold;color: #f40">￥ <span class="jiage">{{goods.price}}</span></p>
+                        <p   style="color: #878787;font-size:0.2rem">库存 <span class="kucun">{{goods.stock}}</span>件</p>
+                    </div>
+                </div>
+                <div class="center">
+                    <div class="shuliang">购买数量</div>
+                    <div class="jiajian">
+                        <div class="left1 jian">-</div>
+                        <div class="left2"><span>1</span></div>
+                        <div class="left1 jia">+</div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <button type="submit" style="width: 100%;height: 100%;border-radius: 0.4rem;border: solid #fff;background: -webkit-linear-gradient(left,#ff4400 0%,#E5E5E5 100%);outline: none">
+                        <a href="{% url 'app:dingdan' goods.id%}">确定</a></button>
+                </div>
+                <div class="logout">
+                    <img src="{% static 'app/detail/img/logout.png'%}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="son son1 son2 buying">立即购买</div>
+    </div>
+</body>
+</html>
+<script src="{% static 'app/detail/js/jquery-3.2.1.js' %}">
+</script>
+<script>
+    let jiage = Number($('.jiage').html())
+    $('.shopping').on('click',function () {
+        $('.gouwuche').css('bottom',0)
+        $('.zhengti').css({
+            'opacity':'0.6',
+            '-webkit-filter': 'blur(2px)',
+        })
+        $('.shadow').css('display','block')
+    })
+    $('.logout').on('click',function(){
+        $('.gouwuche').css('bottom','-10.02rem')
+        $('.zhengti').css({
+            'opacity':'1',
+            '-webkit-filter': 'blur(0)',
+        })
+        $('.shadow').css('display','none')
+
+    })
+    $('.jian').on('click',function () {
+        let num = $('.left2 span').html()
+        let zongjia = 0
+        if (num<=0){
+            num = Number(0)
+            zongjia = num*jiage
+        }
+        else {
+            num = Number(num)-1
+            zongjia = num*jiage
+        }
+        $('.left2 span').html(num)
+        $('.jiage').html(zongjia)
+    })
+     $('.jia').on('click',function () {
+        let num = $('.left2 span').html()
+         let num1 = Number($('.kucun').html())
+         let zongjia = jiage
+         if (num>=num1){
+             num = num1
+             zongjia = num*jiage
+         }
+         else {
+             num = Number(num)+1
+             zongjia = num*jiage
+             console.log(num,zongjia,jiage)
+         }
+
+        $('.left2 span').html(num)
+         $('.jiage').html(zongjia)
+
+    })
+    $('.buying').on('click',function () {
+        $('.gouwuche').css('bottom',0)
+        $('.zhengti').css({
+            'opacity':'0.6',
+            '-webkit-filter': 'blur(2px)',
+        })
+        $('.shadow').css('display','block')
+    })
+    $('button').on('click',function(){
+        $('.gouwuche').css('bottom','-10.02rem')
+        $('.zhengti').css({
+            'opacity':'1',
+            '-webkit-filter': 'blur(0)',
+        })
+        $('.shadow').css('display','none')
+    })
+    $('.gouwuche').on('touchmove',function(e){
+        e.preventDefault()
+    })
+    $('.shadow').on('touchmove',function(e){
+        e.preventDefault()
+    })
+    $('.shadow').on('click',function (e) {
+        $(this).css('display','none')
+        $('.gouwuche').css('bottom','-10.02rem')
+        $('.zhengti').css({
+            'opacity':'1',
+            '-webkit-filter': 'blur(0)',
+        })
+    })
+</script>

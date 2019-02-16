@@ -1,0 +1,424 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /*font-family: PingFang SC, Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;*/
+    font-family: '苹方';
+}
+a{
+    text-decoration: none;
+}
+.header{
+    width: 100%;
+    height: 1.3rem;
+    background: #f9cedd;
+}
+.con{
+    width: 7.05rem;
+    height: 100%;
+    margin: 0 auto;
+}
+.back{
+    width: 1rem;
+    height: 100%;
+    float: left;
+}
+.back_img{
+    display: block;
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+.back_img img{
+    width: 0.22rem;
+    height: 0.19rem;
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+}
+.header .con h2{
+    width: 5.35rem;
+    height: 100%;
+    text-align: center;
+    line-height: 0.9rem;
+    font-size: 0.4rem;
+    color: #fff;
+}
+.content{
+    width: 100%;
+    height: 12.03rem;
+    background: #f2f0f0;
+}
+.content .con{
+    width: 7.02rem;
+    height: auto;
+    position: relative;
+    margin: 0 auto;
+}
+.content .con .dizhi{
+    width: 7.02rem;
+    height: 1.8rem;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: -0.45rem;
+    border-radius: 0.08rem;
+}
+.content .con .dizhi ul{
+    width: 6.65rem;
+    height: 1.45rem;
+    margin: 0 auto;
+    padding-bottom: 0.35rem;
+}
+.content .con .dizhi ul .state{
+    width: 100%;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    font-size: 0.24rem;
+}
+.content .con .dizhi ul .ms{
+    width: 100%;
+    height: 0.55rem;
+}
+.content .con .dizhi ul .ms .dw{
+    width: 0.75rem;
+    height: 0.55rem;
+    float: left;
+    position: relative;
+}
+.content .con .dizhi ul .ms .dw .bg1{
+    width: 0.55rem;
+    height: 0.55rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+}
+.content .con .dizhi ul .ms .dw .bg2{
+    width: 0.55rem;
+    height: 0.55rem;
+    position: absolute;
+    left: 0;
+    top: 0.03rem;
+    z-index: 9;
+}
+.content .con .dizhi ul .ms .dw .bg3{
+    width: 0.12rem;
+    height: 0.12rem;
+    position: absolute;
+    left: 0.22rem;
+    top: 0.2rem;
+    z-index: 14;
+
+}
+.content .con .dizhi ul .ms .people{
+    width: 5.82rem;
+    height: 0.55rem;
+    float: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.content .con .dizhi ul .ms .people em{
+    font-style: normal;
+    font-size: 0.3rem;
+    float: left;
+}
+.content .con .dizhi ul .ms .people img{
+    width: 0.06rem;
+    height: 0.06rem;
+    margin-left: 0.15rem;
+}
+.content .con .dizhi ul .ms .people b{
+    font-style: normal;
+    font-size: 0.2rem;
+    float: left;
+    margin-left: 0.15rem;
+}
+.content .con .dizhi ul .loca{
+    width: 100%;
+    /*height: 0.2rem;*/
+    height: auto;
+    overflow: hidden;
+    font-size: 0.24rem;
+    position: relative;
+}
+.content .con .dizhi ul .loca img{
+    width: 0.06rem;
+    height: 0.06rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.13rem;
+}
+.content .con .dizhi ul .loca p{
+    display: block;
+    float: left;
+    margin-left: 0.75rem;
+}
+.content .con .travel{
+    width: 7.02rem;
+    height: 1.55rem;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 1.6rem;
+    border-radius: 0.08rem;
+}
+.content .con .travel .con{
+    width: 6.55rem;
+    height: 0.85rem;
+    margin: 0 auto;
+    padding: 0.35rem 0;
+    line-height: 0.85rem;
+}
+.content .con .travel .con .start{
+    font-size: 0.3rem;
+    float: left;
+}
+.content .con .travel .con .course{
+    width: 4.78rem;
+    height: 100%;
+    margin-left: 0.2rem;
+    float: left;
+    position: relative;
+}
+.content .con .travel .con .course img:first-child{
+    width: 0.21rem;
+    height: 0.31rem;
+    position: absolute;
+    left: 0.09rem;
+    top: 0;
+}
+.content .con .travel .con .course img:nth-child(2){
+    width: 0.39rem;
+    height: 0.28rem;
+    position: absolute;
+    left: 37%;
+    top: 0;
+}
+.content .con .travel .con .course .receive{
+    width: 0.21rem;
+    height: 0.31rem;
+    position: absolute;
+    right: 0.13rem;
+    top: 0;
+}
+.content .con .travel .con .course ul{
+    width: 95%;
+    height: 0.2rem;
+    position: absolute;
+    left: 0.1rem;
+    bottom: 0.3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.content .con .travel .con .course ul .unspot{
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #b2b2b2;
+    border-radius: 50%;
+}
+.content .con .travel .con .course ul .spot{
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #ff8fb4;
+    border-radius: 50%;
+}
+.content .con .travel .con .course .date{
+    width: 100%;
+    height: 0.3rem;
+    font-size: 0.17rem;
+    line-height: 0.3rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content .con .travel .con .course .date em{
+    font-style: normal;
+}
+.content .con .travel .con .end{
+    font-size: 0.3rem;
+    float: right;
+}
+/*订单费用详情*/
+.content .con .shopsMS{
+    width: 7.02rem;
+    height: 7.55rem;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 3.35rem;
+    border-radius: 0.08rem;
+}
+.content .con .shopsMS ul{
+    width: 6.55rem;
+    height: 3rem;
+    margin: 0 auto;
+}
+.content .con .shopsMS ul .shop{
+    width: 100%;
+    height: 1.55rem;
+    margin-top: 0.25rem;
+    border-bottom: 0.02rem solid #f2f2f2;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+.content .con .shopsMS ul .shop .shopimg{
+    width: 1.1rem;
+    height: 0.85rem;
+}
+.content .con .shopsMS ul .shop .shopimg img{
+    width: .85rem;
+    height: .85rem;
+    float: left;
+}
+.content .con .shopsMS ul .shop .shopname{
+    width: 4.55rem;
+    height: 0.85rem;
+    font-size: 0.2rem;
+}
+.content .con .shopsMS ul .shop .shopname h4{
+    font-size: 0.25rem;
+}
+.content .con .shopsMS ul .shop .shopname .color{
+    width: 0.9rem;
+    height: 0.36rem;
+    border-radius: 0.18rem;
+    background: #cfeffd;
+    line-height: 0.36rem;
+    font-size: 0.2rem;
+    margin-top: 0.15rem;
+}
+.content .con .shopsMS ul .shop .shopname .color span{
+    margin-left: 0.15rem;
+}
+.content .con .shopsMS ul .shop .shopnum{
+    width: 0.9rem;
+    height: 0.85rem;
+}
+.content .con .shopsMS ul .shop .shopnum .bg{
+    width: 0.7rem;
+    height: 0.36rem;
+    border-radius: 0.18rem;
+    background: #f2f2f2;
+    font-size: 0.2rem;
+    line-height: 0.36rem;
+    margin-top: 0.25rem;
+    float: right;
+    color: #b8b8b8;
+}
+.content .con .shopsMS ul .shop .shopnum .bg i{
+    font-size: 0.07rem;
+    margin-left: 0.17rem;
+}
+.content .con .shopsMS ul .shop .jiesuan{
+    width: 100%;
+    height: 0.7rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #ff8fb4;
+    font-weight: bolder;
+}
+.content .con .shopsMS ul .shop .jiesuan em{
+    font-size: 0.2rem;
+    font-style: normal;
+    position: absolute;
+    right: 1.1rem;
+    bottom: 0.2rem;
+    color: #ffc5d8;
+}
+.content .con .shopsMS ul .shop .jiesuan span{
+    font-size: 0.3rem;
+    margin-left: 0.15rem;
+    position: absolute;
+    right: 0;
+    bottom: 0.17rem;
+}
+.content .con .shopsMS ul .price{
+    width: 100%;
+    height: 1.15rem;
+    border-bottom: 0.02rem solid #f2f2f2;
+    color: #b8b8b8;
+}
+.content .con .shopsMS ul .price .total{
+    height: 50%;
+    font-size: 0.21rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content .con .shopsMS ul .price .total p{
+    color: #ff8fb4;
+    font-size: 0.2rem;
+}
+.content .con .shopsMS ul .price .total p em{
+    color: #ffc5d8;
+    font-size: 0.16rem;
+}
+.content .con .shopsMS ul .price .haiguan{
+    height: 50%;
+    font-size: 0.21rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content .con .shopsMS ul .price .haiguan p{
+    color: #ff8fb4;
+    font-size: 0.2rem;
+}
+.content .con .shopsMS ul .price .haiguan p em{
+    color: #ffc5d8;
+    font-size: 0.16rem;
+}
+.content .con .shopsMS ul .dingdan{
+    width: 100%;
+    height: 2.15rem;
+    font-size: 0.2rem;
+}
+.content .con .shopsMS ul .dingdan .kefu{
+    width: 100%;
+    height: 0.8rem;
+}
+.content .con .shopsMS ul .dingdan .kefu div{
+    width: 1.5rem;
+    height: 0.36rem;
+    border-radius: 0.15rem;
+    background: #ff8fb4;
+    font-size: 0.2rem;
+    line-height: 0.36rem;
+    text-align: center;
+    float: right;
+    margin-top: 0.2rem;
+}
+.content .con .shopsMS ul .dingdan .kefu div a{
+    color: #fff;
+    font-weight: 700;
+}
+.content .con .shopsMS ul .dingdan .total{
+    width: 100%;
+    height: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.content .con .shopsMS ul .dingdan .total div{
+    display: flex;
+    justify-content: space-between;
+    color: #b8b8b8;
+    font-weight: 800;
+}
+.content .con .shopsMS ul .dingdan .total div:first-child{
+    margin: 0.12rem 0;
+}
+.content .con .shopsMS ul .dingdan .total div:nth-child(2){
+    margin-bottom: 0.22rem;
+}
+.content .con .shopsMS ul .dingdan .total div em{
+    font-style: normal;
+}

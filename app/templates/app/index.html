@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_966617_afyr9gls6am.css">
+    <link rel="stylesheet" href="{% static '/app/css/index.css' %}">
+    <script src="{% static '/app/js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static '/app/js/rem.js' %}"></script>
+    <script src="{% static '/app/js/first.js' %}"></script>
+
+</head>
+<body>
+    <div class="header">
+        <div class="headcon" style="width: 7.50rem; height: 0.45rem; margin: 0 auto  ;">
+            <div class="con">
+                <img src="{% static 'app/image/index_1/mulu.png' %}" alt="">
+            </div>
+            <div class="search">
+                <img class="stool" src="{% static 'app/image/index_1/search.png' %}" alt="">
+                <input type="text">
+            </div>
+        </div>
+    </div>
+    <div class="hid">
+        <div class="h-con">
+            {% if user.tel %}
+            <p class="mine">
+                <div style="width: 1.5rem;height: 1.5rem;margin: -.1rem .2rem;background-color: red;border-radius: 50%;float: left;"></div>
+                <div style="height: 1.5rem;width: 3rem;margin: -.1rem -.08rem;float: left;padding-top: .25rem;box-sizing: border-box">
+                    {% if user.name %}
+                    <span style="display: block;font-size:20px;margin-bottom: .2rem ">{{user.name}}</span>
+                    {% else %}
+                    <span style="display: block;font-size:20px;margin-bottom: .2rem ">{{user.tel}}</span>
+                    {% endif %}
+                    <a href="" style="width: 2.1rem;height: auto;display: block;text-align:center;border: .02rem solid #ccc;border-radius: .15rem;font-size: 14px;color: #ccc;padding-left: .1rem;box-sizing: border-box">编辑个人资料</a>
+                </div>
+            </p>
+            {% else %}
+            <p class="mes"><span>豆蔻</span>，来此购</p>
+            <a class="login" href="/verify/login">点击登录</a>
+            {% endif %}
+        </div>
+        <div class="t-con"></div>
+        <div class="c-con">
+            <a href=""><span>购物车</span></a>
+            <a href="{% url 'app:dingdan1' %}"><span>订单</span></a>
+        </div>
+        {% if user.tel  %}
+        <a href="{% url 'app:exit' %}" class="exit"><span>退出</span></a>
+        {% endif %}
+
+    </div>
+    <div class="shadow"></div>
+
+    <div class="main" >
+        <div class="m-con" style="margin: 0 auto;min-height: 12.4rem;width: 7.5rem;height: auto;margin: 0 auto">
+            <div class="left">
+                <a href="" class="l-con">品牌墙</a>
+                <a href="" class="l-con">男士包</a>
+                <a href="" class="l-con">女士包</a>
+                <a href="" class="l-con">箱包</a>
+            </div>
+            <div class="right">
+                <div class="r-head" >
+                    <span style="float: left;width: 0.14rem;height: 0.14rem;background-color: #fc869e;border-radius: 50%;margin-left: .2rem"></span>
+                    <span style="font-size: 18px;display: block;float: left;margin-left: .3rem">商品</span>
+                </div>
+                <div class="r-con">
+                    <a href="{% url 'app:goods' 1 %}">
+                    <div class="imgbox"><img src="{% static 'app/image/index_1/chanl.png' %}" alt=""></div>
+                    <span style="display: block;margin-left: .25rem;font-weight: 600;font-size: 14px;color: #646464;">香奈儿</span>
+                        </a>
+                </div>
+                <div class="r-con">
+                    <div class="imgbox"><img src="{% static 'app/image/index_1/dior.png' %}" alt=""></div>
+                    <span style="margin-left: .4rem">迪奥</span>
+                </div>
+
+                <div class="r-con">
+                    <div class="imgbox"><img src="{% static 'app/image/index_1/gucci.png' %}" alt=""></div>
+                    <span style="margin-left: .4rem">古驰</span>
+                </div>
+                <div class="r-con">
+                    <div class="imgbox"><img src="{% static 'app/image/index_1/fendi.png' %}" alt=""></div>
+                    <span style="margin-left: .4rem">芬迪</span>
+                </div>
+                <div class="r-con">
+                    <div class="imgbox"><img src="{% static 'app/image/index_1/fasizhe.png' %}" alt=""></div>
+                    <span>范思哲</span>
+                </div>
+                <div class="r-con">
+                    <div class="imgbox"><img src="{% static 'app/image/index_1/hemes.png' %}" alt=""></div>
+                    <span>爱马仕</span>
+                </div>
+                <div class="r-con">
+                    <div class="imgbox"><img src="{% static 'app/image/index_1/chloe.png' %}" alt=""></div>
+                    <span>寇依</span>
+                </div>
+                <div class="r-con">
+                    <div class="imgbox"><img src="{% static 'app/image/index_1/babaoli.png' %}" alt=""></div>
+                    <span>巴宝莉</span>
+                </div>
+                <div class="r-con">
+                    <div class="imgbox"><img src="{% static 'app/image/index_1/lv.png' %}" alt=""></div>
+                    <span style="margin-left: .5rem">LV</span>
+                </div>
+                <div class="r-con">
+                    <div class="imgbox"><img src="{% static 'app/image/index_1/prada.png' %}" alt=""></div>
+                    <span>普拉达</span>
+                </div>
+                <div class="r-con">
+                    <div class="imgbox"><img src="{% static 'app/image/index_1/ysl.png' %}" alt=""></div>
+                    <span>圣罗兰</span>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

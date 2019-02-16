@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'js/rem.js' %}"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: PingFang SC, Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+        }
+        a{
+            text-decoration: none;
+        }
+        .content{
+            width: 100%;
+            height: 10.8rem;
+            background: #fff;
+            padding-top: 2.5rem;
+        }
+        .error{
+            width: 7.05rem;
+            height: 100%;
+            margin: 0 auto;
+            font-size: 0.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .error img{
+            width: 4.17rem;
+            height: 3.6rem;
+        }
+        .error .tips{
+            width: 4rem;
+            color: #b4b4b4;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 0.7rem;
+        }
+        .net{
+            width: 2.3rem;
+            height: 0.7rem;
+            color: #fff;
+            background: -webkit-linear-gradient(left,#fca8af,#f87c94);
+            border-radius: 0.1rem;
+            line-height: 0.7rem;
+            text-align: center;
+            font-size: 0.36rem;
+            margin-top: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="error">
+            <img src="{% static 'image/login/error.png' %}" alt="">
+            <div class="tips">
+                <p>网络迷路了登录页失败</p><span>速速找回</span>
+            </div>
+            <div class="net">
+                <span>检查网络</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

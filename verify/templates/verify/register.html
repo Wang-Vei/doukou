@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'js/rem.js' %}"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: PingFang SC, Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+        }
+        a{
+            text-decoration: none;
+        }
+        input::-webkit-input-placeholder {
+            /* placeholder颜色  */
+            color: #ccc;
+            /* placeholder字体大小  */
+            font-size: 0.2rem;
+             /* placeholder位置  */
+            /*text-align: right;*/
+        }
+        @keyframes hiddenMY{
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+        .con{
+            width: 100%;
+            height: 13.34rem;
+            background: url("{% static 'image/register/top-bg.png' %}");
+            background-size: 100% 100%;
+        }
+        .real-con{
+            width: 7.05rem;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .top{
+            width: 100%;
+            height: 3.2rem;
+            position: absolute;
+            left: 0;
+            top: 0.3rem;
+        }
+        .top .backup{
+            width: 100%;
+            height: 0.6rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .top .backup img{
+            width: 0.18rem;
+            height: 0.25rem;
+        }
+        .real-con .top .user-img{
+            width: 100%;
+            height: 2rem;
+            font-size: 0.35rem;
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            color: #fff;
+        }
+        .user-img img{
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+        .forms{
+            width: 100%;
+            height: 7.5rem;
+            position: absolute;
+            left: 0;
+            top: 4.7rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .forms .items{
+            width: 6.55rem;
+            height: 0.8rem;
+            position: relative;
+            border-bottom: .02rem solid #ecedee;
+            display: flex;justify-content: flex-end;align-items: flex-end;
+            margin: 0.1rem auto;
+            padding-bottom: 0.1rem;
+        }
+        .forms .items .icon1,.icon2,.icon3,.icon4{
+            width: 0.59rem;
+            height: 0.54rem;
+            background: #faeee7;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .icon2{
+            background: #f7e2e7;
+        }
+        .icon2 img{
+            margin-top: 0.1rem;
+        }
+        .icon3,.icon4{
+            background: #e6f4fb;
+        }
+        .forms .items .uname{
+            background: #f9fafb;
+            width: 6.4rem;
+            height: .55rem;
+            border: 0;
+            outline: none;
+            padding-left: 0.2rem;
+            color: #959697;
+        }
+        .tel-code{
+            width: 2.32rem;
+            height: 0.68rem;
+            background: url("{% static 'image/register/tel-bg.png' %}");
+            background-size: 100% 100%;
+            position: absolute;
+            right: 0;
+            top: 0.2rem;
+            font-size: 0.23rem;
+            color: #ccc;
+            line-height: 0.68rem;
+            text-align: center;
+            cursor: pointer;
+        }
+        .btn{
+            width: 6.55rem;
+            height: 0.7rem;
+            background: #f6999f;
+            border: 0;
+            border-radius: 0.35rem;
+            margin-top: 0.95rem;
+            color: #fff;
+            font-size: 0.3rem;
+            text-align: center;
+            line-height: 0.7rem;
+
+        }
+        .zhegai{
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            background: rgba(0,0,0,.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        .zhegai .light{
+            width: 0.92rem;
+            height: 0.92rem;
+            position: absolute;
+            left: 42%;
+            top: 4.94rem;
+            background: url("{% static 'image/register/green.png' %}");
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .zhegai .light img{
+            width: 0.34rem;
+            height: 0.25rem;
+        }
+        .zhegai .tips{
+            width: 4.7rem;
+            height: 2.45rem;
+            background: url("{% static 'image/register/success-bg.png' %}");
+            background-size: 100% 100%;
+            font-size: 0.35rem;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-weight: bold;
+        }
+        .error{
+            width: 4rem;
+            height: .6rem;
+            background: #FF3167;
+            position: absolute;
+            right: 0;
+            top: 29%;
+            border-radius: .3rem;
+            font-size: .3rem;
+            text-align: center;
+            line-height: .6rem;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="real-con">
+            <div class="top">
+                <a href="{% url 'verify:login' %}" class="backup">
+                    <img src="{% static 'image/register/backup.png' %}" alt="">
+                </a>
+                <li class="user-img">
+                    <img src="{% static 'image/register/user.png' %}" alt="">
+                    <span>注册</span>
+                </li>
+            </div>
+            <form action="" method="post" class="forms">
+                {% csrf_token %}
+                <li class="items">
+                    <div class="icon1">
+                        <img src="{% static 'image/register/man.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
+                    </div>
+                    {{ form.tel }}
+{#                    <input type="text" name="tel" id="tel" class="uname" placeholder="请输入手机号" maxlength="13">#}
+                    <div class="tel-code">
+                        <span>免费获取验证码</span>
+                    </div>
+                </li>
+                <li class="items">
+                    <div class="icon2">
+                        <img src="{% static 'image/register/tel-code.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
+                    </div>
+                    <input type="text" name="code" class="uname" id="code" placeholder="请输入验证码" maxlength="4">
+                </li>
+                <li class="items">
+                    <div class="icon3">
+                        <img src="{% static 'image/register/Icon_Lock.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
+                    </div>
+                    <input type="password" name="password" id="pass" class="uname" placeholder="请输入密码">
+                </li>
+                <li class="items">
+                    <div class="icon4">
+                        <img src="{% static 'image/register/Icon_Lock.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
+                    </div>
+                    {{ form.password }}
+                </li>
+                <div class="btn">
+                    <span>注册</span>
+                </div>
+            </form>
+        </div>
+        <div class="zhegai">
+            <div class="light">
+                <img src="{% static 'image/register/right.png' %}" alt="">
+            </div>
+            <div class="tips">
+                <span style="margin-top: 0.4rem;">注册成功！</span>
+                <em style="font-style: normal;font-size: 0.25rem">Registered successfully</em>
+            </div>
+        </div>
+        <div class="error">
+            <p id="error-ms"></p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var oldtel = $("#id_tel").val();
+     $("#id_tel").bind('input',function () {
+            $("#id_tel").val(fomatterTel($("#id_tel").val(), oldtel));
+            oldtel = $("#id_tel").val();
+     });
+    function fomatterTel(val, old) {
+            var str = "";
+            var telLen = val.length;
+            if (old.length <= telLen) {
+                if (telLen === 4 || telLen === 9) {
+                    var pre = val.substring(0, telLen-1);
+                    var last = val.substr(telLen-1, 1);
+                    str = pre + ' ' + last;
+                } else {
+                    str = val;
+                }
+            } else {
+                if (telLen === 9 || telLen === 4) {
+                    str = val.trim();
+                } else {
+                    str = val;
+                }
+            }
+            return str;
+    }
+    $(".btn").click(function () {
+        if ($('#id_tel').val() === ''){
+            $(".error").css({
+                animation: 'hiddenMY 2s',
+            })
+            setTimeout(function(){
+            $(".error").css({
+                'animation':'none',
+                '-webkit-animation':'none'
+            });
+            },1000);
+            $("#error-ms").text('请填写手机号');
+            return
+        }
+        if ($('#pass').val() === ''){
+            $(".error").css({
+                animation: 'hiddenMY 2s',
+            })
+            setTimeout(function(){
+            $(".error").css({
+                'animation':'none',
+                '-webkit-animation':'none'
+            });
+            },1000);
+            $("#error-ms").text('请设置初始密码！');
+            return
+        }
+        let Posttel = ''
+        oldtel = $("#id_tel").val();
+        for (var i = 0; i< oldtel.length; i++){
+            if (oldtel[i] != ' '){
+               Posttel+=oldtel[i]
+            }
+        }
+        $("#id_tel").val(Posttel)
+        if ($("#id_password").val() !== $("#pass").val()){
+            $(".error").css({
+                animation: 'hiddenMY 2s',
+            })
+            setTimeout(function(){
+            $(".error").css({
+                'animation':'none',
+                '-webkit-animation':'none'
+            });
+            },1000)
+            $("#error-ms").text('请确保两次输入的密码一致')
+            return
+        }else {
+            $("#pass").val('')
+        }
+        $.ajaxSetup({data: {csrfmiddlewaretoken: '{{ csrf_token }}'}});
+        $.ajax({
+            url: "{% url 'verify:register' %}",
+            type: 'post',
+            dataType: 'JSON',
+            data: {"tel":$("#id_tel").val(),'password':$("#id_password").val()},
+            success: function(e){
+                if(e.status == 'ok'){
+                    $('.zhegai').css({
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    })
+                    setTimeout(function () {
+                        location.href = "http://127.0.0.1:8000/verify/login/";
+                    },2000);
+                }else {
+                    $('#id_tel').val('')
+                    $("#id_password").val('')
+                    $("#code").val('')
+                    $(".error").css({
+                        animation: 'hiddenMY 2s',
+                    })
+                    setTimeout(function(){
+                        $(".error").css({
+                            'animation':'none',
+                            '-webkit-animation':'none'
+                        });
+                    },1000);
+                    $("#error-ms").text('该手机号已经被人注册过了！')
+                }
+            }
+        })
+    })
+    $("#id_password").blur(function () {
+        if ($(this).val() !== $("#pass").val()){
+            $(".error").css({
+                animation: 'hiddenMY 2s',
+            })
+            setTimeout(function(){
+            $(".error").css({
+                'animation':'none',
+                '-webkit-animation':'none'
+            });
+            },1000);
+            $("#error-ms").text('请确保两次输入的密码一致');
+            $(".btn").attr('disabled',true)
+        }else {
+            $(".btn").attr('disabled',false)
+        }
+    })
+    $("#id_tel").blur(function () {
+        var pattern = /(13\d|14[579]|15[^4\D]|17[^49\D]|18\d)\d{8}/g,
+	    str = $('#id_tel').val()
+        let newstr=''
+        for (var i=0;i<str.length;i++){
+            if(str[i]!=' '){
+                newstr+=str[i]
+            }
+        }
+        let boo=pattern.test(newstr);
+        if (!boo){
+            $(".error").css({
+                animation: 'hiddenMY 2s',
+            })
+            setTimeout(function(){
+            $(".error").css({
+                'animation':'none',
+                '-webkit-animation':'none'
+            });
+            },1000);
+            $("#error-ms").text('手机号格式不对哟！')
+            $('#id_tel').val('')
+            $(".btn").attr('disabled',true)
+
+        }else {
+            $(".btn").attr('disabled',false)
+
+        }
+    })
+</script>
