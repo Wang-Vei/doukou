@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <script src="{% static 'app/detail/js/rem.js' %}"></script>
+    <script src="{% static 'app/detail/js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'app/js/animate.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'app/detail/css/help.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header">
+                <div class="fanhui">
+                    <a href="{% url 'app:detail' item_id %}"><img src="{% static 'app/image/index_1/back.png'%}" alt="" style="width: .38rem;height: .33rem"></a>
+
+                </div>
+                <div class="zhongxin">
+                    客服
+                </div>
+                <div class="fenxiang">
+                    <img src="{% static 'app/image/index_1/user.png'%}"  alt="" style="width: .29rem;height: .31rem">
+                </div>
+            </div>
+    </header>
+    <div class="chatArea">
+        <div class="con">
+
+        </div>
+    </div>
+    <div class="chatInput">
+        <div class="con">
+            <li>
+                <img src="{% static 'app/image/index_1/loading.png' %}" alt="" style="width: .87rem;height: .87rem">
+            </li>
+            <li>
+                <div class="form">
+                    <input type="text" class="search">
+                </div>
+            </li>
+            <li>
+                <img src="{% static 'app/image/index_1/biaoqing.png' %}" alt="" style="width: .79rem;height: .79rem">
+            </li>
+            <li>
+                <img src="{% static 'app/image/index_1/add.png' %}" alt="" style="width: .79rem;height: .79rem">
+            </li>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let search=document.querySelector(".search");
+    search.onkeydown=function () {
+        if(event.keyCode==13 && search.value!=""){
+            let s1 = "<p  class='oneWord'><span></span></p>"
+            $(".chatArea .con").append(s1)
+            let number = document.querySelectorAll(".oneWord")
+            $(".oneWord").eq(parseInt(number.length-1)).find("span").append(search.value)
+            let s2="<div id='TXArea'><img src='{% static 'app/image/index_1/TT.png' %}' style='width: .66rem;height: .66rem'></div>"
+            $(".oneWord").eq(parseInt(number.length-1)).append(s2)
+            let ss1 = "<p  class='oneWords'><span></span></p>"
+            $(".chatArea .con").append(ss1)
+            let numbers = document.querySelectorAll(".oneWords")
+            if(number.length > 4){
+                $(".oneWords").eq(parseInt(numbers.length-1)).find("span").append('......')
+            }else if(number.length > 3){
+                $(".oneWords").eq(parseInt(numbers.length-1)).find("span").append('说了不听，是不是？So,Fuck YOU !')
+            }else if(number.length > 2){
+                $(".oneWords").eq(parseInt(numbers.length-1)).find("span").append('还他妈发! 都给你说了,客服模块有问题呢！')
+            }else if(number.length > 1){
+                $(".oneWords").eq(parseInt(numbers.length-1)).find("span").append('不要发了,客服服务404...')
+            }else {
+                $(".oneWords").eq(parseInt(numbers.length-1)).find("span").append('客服人员已下线...')
+            }
+            let ss2="<div id='TXAreas'><img src='{% static 'app/image/index_1/helper.png' %}' style='width: .66rem;height: .66rem'></div>"
+            $(".oneWords").eq(parseInt(numbers.length-1)).append(ss2)
+
+            if($(".oneWord:last").position().top > 500){
+                console.log(1111)
+                $("html").animate({scrollTop:10000000},)
+            }
+            search.value=''
+        }
+    };
+</script>

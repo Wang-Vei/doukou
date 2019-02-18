@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     {% load static %}
-    <script src="{% static 'js/jquery-3.2.1.js' %}"></script>
-    <script src="{% static 'js/rem.js' %}"></script>
+    <script src="{% static 'verify/js/jquery-3.2.1.js' %}"></script>
+    <script src="{% static 'verify/js/rem.js' %}"></script>
     <style>
         *{
             margin: 0;
@@ -41,7 +41,7 @@
         .con{
             width: 100%;
             height: 13.34rem;
-            background: url("{% static 'image/register/top-bg.png' %}");
+            background: url("{% static 'verify/image/register/top-bg.png' %}");
             background-size: 100% 100%;
         }
         .real-con{
@@ -135,7 +135,7 @@
         .tel-code{
             width: 2.32rem;
             height: 0.68rem;
-            background: url("{% static 'image/register/tel-bg.png' %}");
+            background: url("{% static 'verify/image/register/tel-bg.png' %}");
             background-size: 100% 100%;
             position: absolute;
             right: 0;
@@ -175,7 +175,7 @@
             position: absolute;
             left: 42%;
             top: 4.94rem;
-            background: url("{% static 'image/register/green.png' %}");
+            background: url("{% static 'verify/image/register/green.png' %}");
             background-size: 100% 100%;
             display: flex;
             justify-content: center;
@@ -188,7 +188,7 @@
         .zhegai .tips{
             width: 4.7rem;
             height: 2.45rem;
-            background: url("{% static 'image/register/success-bg.png' %}");
+            background: url("{% static 'verify/image/register/success-bg.png' %}");
             background-size: 100% 100%;
             font-size: 0.35rem;
             color: #333;
@@ -218,10 +218,10 @@
         <div class="real-con">
             <div class="top">
                 <a href="{% url 'verify:login' %}" class="backup">
-                    <img src="{% static 'image/register/backup.png' %}" alt="">
+                    <img src="{% static 'verify/image/register/backup.png' %}" alt="">
                 </a>
                 <li class="user-img">
-                    <img src="{% static 'image/register/user.png' %}" alt="">
+                    <img src="{% static 'verify/image/register/user.png' %}" alt="">
                     <span>注册</span>
                 </li>
             </div>
@@ -229,7 +229,7 @@
                 {% csrf_token %}
                 <li class="items">
                     <div class="icon1">
-                        <img src="{% static 'image/register/man.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
+                        <img src="{% static 'verify/image/register/man.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
                     </div>
                     {{ form.tel }}
 {#                    <input type="text" name="tel" id="tel" class="uname" placeholder="请输入手机号" maxlength="13">#}
@@ -239,19 +239,19 @@
                 </li>
                 <li class="items">
                     <div class="icon2">
-                        <img src="{% static 'image/register/tel-code.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
+                        <img src="{% static 'verify/image/register/tel-code.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
                     </div>
                     <input type="text" name="code" class="uname" id="code" placeholder="请输入验证码" maxlength="4">
                 </li>
                 <li class="items">
                     <div class="icon3">
-                        <img src="{% static 'image/register/Icon_Lock.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
+                        <img src="{% static 'verify/image/register/Icon_Lock.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
                     </div>
                     <input type="password" name="password" id="pass" class="uname" placeholder="请输入密码">
                 </li>
                 <li class="items">
                     <div class="icon4">
-                        <img src="{% static 'image/register/Icon_Lock.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
+                        <img src="{% static 'verify/image/register/Icon_Lock.png' %}" alt="" style="width: 0.41rem;height: 0.41rem">
                     </div>
                     {{ form.password }}
                 </li>
@@ -262,7 +262,7 @@
         </div>
         <div class="zhegai">
             <div class="light">
-                <img src="{% static 'image/register/right.png' %}" alt="">
+                <img src="{% static 'verify/image/register/right.png' %}" alt="">
             </div>
             <div class="tips">
                 <span style="margin-top: 0.4rem;">注册成功！</span>

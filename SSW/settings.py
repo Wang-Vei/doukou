@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'SSW.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ssw',
+        'NAME': 'doukou',
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': '123456'
+        'PASSWORD': '154303'
     }
 }
 

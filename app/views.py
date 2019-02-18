@@ -25,7 +25,16 @@ def goods(request,id):
 def detail(request,id1):
     if request.method == 'GET':
         goods = Goods.objects.filter(id=id1).first()
-        return render(request,'app/detail.html', {'goods': goods})
+        return render(request,'app/detail.html', {'goods': goods,"item_id":id1})
+
+
+# 客服页面
+def help(request,id1):
+    if request.method == 'GET':
+        goods = Goods.objects.filter(id=id1).first()
+        return render(request,'app/help.html', {'goods': goods,"item_id":id1})
+
+
 def dingdan(request,id1):
     if request.method == 'GET':
         goods = Goods.objects.filter(id=id1).first()
