@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <script src="{% static 'app/detail/js/rem.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'app/detail/css/detail.css' %}">
+</head>
+<body>
+    <div class="zhengti">
+        {% csrf_token %}
+        <header>
+            <div class="header">
+                <div class="fanhui">
+                    <a href="{% url 'app:goods' 1 %}"><img src="{% static 'app/detail/img/fanhui.png'%}" alt="" ></a>
+
+                </div>
+                <div class="zhongxin">
+                    商品详情
+                </div>
+                <div class="fenxiang">
+                    <img src="{% static 'app/detail/img/分享.png'%}"  alt="" >
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+</html>
+<script src="{% static 'app/detail/js/jquery-3.2.1.js' %}"></script>

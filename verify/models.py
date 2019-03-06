@@ -12,6 +12,10 @@ class User(models.Model):
         RegexValidator(regex=r'^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$', message='手机号格式不对吧！')
     ])
     img = models.ImageField(upload_to="upload/user_msg/images")
+    realname=models.CharField(max_length=12, default='', null=True)
+    sex=models.CharField(max_length=2, default='', null=True)
+    place=models.CharField(max_length=32, default='', null=True)
+    birthday=models.DateField
 
     def __str__(self):
         return self.username

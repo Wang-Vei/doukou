@@ -10,6 +10,12 @@ def index(request):
     # print(obj.tel)
     return render(request,'app/index.html',{'user':obj})
 
+def self(request):
+    tel = request.session.get('tel',None)
+    obj = User.objects.filter(tel=tel).first()
+    return render(request,'app/self.html',{'user':obj})
+
+
 def exit(request):
     del request.session['tel']
     return redirect(reverse("verify:login"))

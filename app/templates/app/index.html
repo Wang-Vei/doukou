@@ -37,7 +37,7 @@
                     {% else %}
                     <span style="display: block;font-size:20px;margin-bottom: .2rem ">{{user.tel}}</span>
                     {% endif %}
-                    <a href="" style="width: 2.1rem;height: auto;display: block;text-align:center;border: .02rem solid #ccc;border-radius: .15rem;font-size: 14px;color: #ccc;padding-left: .1rem;box-sizing: border-box">编辑个人资料</a>
+                    <a href="{% url 'app:self' %}" style="width: 2.1rem;height: auto;display: block;text-align:center;border: .02rem solid #ccc;border-radius: .15rem;font-size: 14px;color: #ccc;padding-left: .1rem;box-sizing: border-box">编辑个人资料</a>
                 </div>
             </p>
             {% else %}
